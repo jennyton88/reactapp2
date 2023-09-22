@@ -21,7 +21,7 @@ function BoxedContent() {
       <div className="post-content">
         <p>text content</p>
         </div>
-        <div className="like-content">
+        <div className="bottom-content">
           <table>
             <tr>
               <th>like</th>

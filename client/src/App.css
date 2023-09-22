@@ -28,10 +28,11 @@ body {
   border-style: solid;
   border-color: black;
   background-color: lightblue;
+  margin-bottom: 1rem;
 }
 
-.extra-content {
+.bottom-content {
   border: 2 rem;
   border-style: solid;
-  border-color: blue;
+  border-color: black;
 }
