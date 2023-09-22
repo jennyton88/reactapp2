@@ -1,15 +1,5 @@
-/* .add-post-button {
-  width: 50 px;
-  height: 50 px;
-  padding: 10 px;
-  margin: 10 px;
-  border: 1px solid black;
-}
-
 /* div for post */
-body {
-  padding: 20px;
-}
+
 .post-box {
   width: 30rem;
   height: 20rem;
@@ -30,5 +20,7 @@ body {
 }
 
 .extra-content {
-  border: 2 rem solid brown;
+  border: 2 rem;
+  border-style: solid;
+  border-color: blue;
 }
