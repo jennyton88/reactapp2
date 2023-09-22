@@ -4,10 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      {/* <AddPost /> */}
-      <p>text</p>
       <BoxedContent />
-      <p>text</p>
     </div>
   );
 }
@@ -15,13 +12,19 @@ function App() {
 function BoxedContent() {
   return (
     <div className="post-box">
-      <p>Text1</p>
+      <p>Username</p>
+      <h2>Header</h2>
       <div className="post-content">
-        <p>Text</p>
-        <div className="extra-content">
-          <p>Text2</p>
+        <p>text content</p>
         </div>
-      </div>
+        <div className="like-content">
+          <table>
+            <tr>
+              <th>like</th>
+              <th>comment</th>
+            </tr>
+          </table>
+        </div>
     </div>
   )
 }
