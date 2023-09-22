@@ -78,3 +78,10 @@ body {
   border-color: blue;
   margin-top: 1rem;
 }
+
+/* .whole-post-comment-textarea {
+  box-sizing: content-box;
+  height: 60%;
+  width: 95%;
+  resize: none;
+} */

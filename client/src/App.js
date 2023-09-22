@@ -54,7 +54,8 @@ function BoxedContentWholePost() {
         </table>
       </div>
       <div className="whole-post-comment-box">
-        <h2>Comment</h2>
+        {/* <h2>Comment:</h2> */}
+        {/* <textarea className="whole-post-comment-textarea"></textarea> */}
       </div>
     </div>
   )
