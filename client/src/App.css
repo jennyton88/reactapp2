@@ -3,6 +3,10 @@ body {
   padding: 3rem;
 }
 
+.App {
+  padding: 2rem;
+}
+
 .post-box {
   width: 45rem;
   height: 20rem;
@@ -12,6 +16,7 @@ body {
   border-style: solid;
   border-color: black;
   background-color: azure;
+  margin-bottom: 2rem;
 }
 
 .post-content {
