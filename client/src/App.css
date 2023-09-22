@@ -1,9 +1,12 @@
 /* div for post */
+body {
+  padding: 3rem;
+}
 
 .post-box {
-  width: 30rem;
+  width: 45rem;
   height: 20rem;
-  padding: 3rem;
+  padding: 2rem;
   margin: auto;
   border: 0.3rem;
   border-style: solid;
@@ -13,10 +16,13 @@
 
 .post-content {
   box-sizing: content-box;
+  height: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
   border: 0.3 rem;
   border-style: solid;
-  border-color: orange;
-  background-color: green;
+  border-color: black;
+  background-color: lightblue;
 }
 
 .extra-content {
