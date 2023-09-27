@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
@@ -43,7 +43,10 @@ function AddPost() {
   )
 }
 
+
 function BoxedContentWholePost() {
+  const [count, setCount] = useState(0); // right now not accounting for user like a post once
+  const [saveComment, setComment] = useState("");
   return (
     <div className="whole-post-box">
       <p>Username</p>
@@ -56,15 +59,16 @@ function BoxedContentWholePost() {
           <thead></thead>
           <tbody>
             <tr>
-              <th><button>like</button></th>
+              <th><button onClick={() => setCount(1)}>like {count}</button></th>
               <th><button>comment</button></th>
             </tr>
           </tbody>
         </table>
       </div>
       <div className="whole-post-comment-box">
-        <textarea className="whole-post-comment-textarea"></textarea>
-        <button >Comment</button>
+        <textarea className="whole-post-comment-textarea" ></textarea>
+        <button onClick={() => setComment("hello")}>Comment</button>
+        <p>{saveComment}</p>
       </div>
     </div>
   )
