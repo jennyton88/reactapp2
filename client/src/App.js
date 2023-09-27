@@ -1,9 +1,10 @@
-
+import {useState} from 'react';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <AddPost />
       <BoxedContent />
       <BoxedContentWholePost />
     </div>
@@ -24,12 +25,20 @@ function BoxedContent() {
             <thead></thead>
             <tbody>
               <tr>
-                <th>like</th>
-                <th>comment</th>
+              <th><button>like</button></th>
+              <th><button>comment</button></th>
               </tr>
             </tbody>
           </table>
         </div>
+    </div>
+  )
+}
+
+function AddPost() {
+  return(
+    <div>
+      <button>Add a post</button>
     </div>
   )
 }
@@ -47,15 +56,15 @@ function BoxedContentWholePost() {
           <thead></thead>
           <tbody>
             <tr>
-              <th>like</th>
-              <th>comment</th>
+              <th><button>like</button></th>
+              <th><button>comment</button></th>
             </tr>
           </tbody>
         </table>
       </div>
       <div className="whole-post-comment-box">
-        {/* <h2>Comment:</h2> */}
-        {/* <textarea className="whole-post-comment-textarea"></textarea> */}
+        <textarea className="whole-post-comment-textarea"></textarea>
+        <button >Comment</button>
       </div>
     </div>
   )
