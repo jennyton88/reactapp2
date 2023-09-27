@@ -47,6 +47,8 @@ function AddPost() {
 function BoxedContentWholePost() {
   const [count, setCount] = useState(0); // right now not accounting for user like a post once
   const [saveComment, setComment] = useState("");
+  const [textContent, setTextContent] = useState("");
+
   return (
     <div className="whole-post-box">
       <p>Username</p>
@@ -66,8 +68,8 @@ function BoxedContentWholePost() {
         </table>
       </div>
       <div className="whole-post-comment-box">
-        <textarea className="whole-post-comment-textarea" ></textarea>
-        <button onClick={() => setComment("hello")}>Comment</button>
+        <textarea className="whole-post-comment-textarea" value={textContent} onChange={e => setTextContent(e.target.value)}></textarea>
+        <button onClick={() => setComment(textContent)}>Comment</button>
         <p>{saveComment}</p>
       </div>
     </div>
