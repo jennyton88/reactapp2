@@ -63,7 +63,7 @@ body {
 
 .whole-post-bottom-content {
   box-sizing: content-box;
-  height: 5%;
+  /* height: 5%; */
   border: 0.3rem;
   border-style: solid;
   border-color: black;
