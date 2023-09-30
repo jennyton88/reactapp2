@@ -1,23 +1,31 @@
 import React, {useState} from 'react';
 import './App.css';
 
-function App() {
-  // const arr = [];
-  //const [testDiv, setTestDiv] = useState(arr);
 
-  // function makeDivs() {
-  //   arr.push(<BoxedContent />);
-  //   const arrDivs = arr.map(postDiv => <BoxedContent />);
-  //   return <div>{arrDivs}</div>;
-  // }
+const postData = [
+  {username: "Person", header: "What is the future?", postText: "AI", likes: 0},
+  {username: "Person2", header: "Dogs are good pets", postText: "Source? me", likes: 3}
+];
+
+const postDisplay = postData.map((posted) => <UserPost username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />);
+
+function UserPost(props) {
+  return (
+    <div>
+      <p>{props.username}</p>
+      <h1>{props.header}</h1>
+      <p>{props.postText}</p>
+      <p>{props.likes}</p>
+    </div>
+  )
+}
+
+
+function App() {
+
   return (
     <div className="App">
-      {/* <button onClick={() => makeDivs()}>Add a boxed Content</button> */}
-      {/* <AddPost /> */}
-      <BoxedContent />
-      <BoxedContent />
-      <BoxedContent />
-      <BoxedContent />
+      {postDisplay}
       <BoxedContentWholePost />
     </div>
   );
@@ -49,30 +57,15 @@ function BoxedContent() {
   )
 }
 
-// function AddPost() {
-//   return(
-//     <div>
-//       <button>Add a post</button>
-//     </div>
-//   )
-// }
-
 
 function BoxedContentWholePost() {
   const [count, setCount] = useState(0); // right now not accounting for user like a post once
   const [saveComment, setComment] = useState("");
   const [textContent, setTextContent] = useState("");
-  // const [numOfDivs, setNumOfDivs] = useState(0);
-  // const [divs, setDivs] = useState(null);
 
   function createNewComment(textContent) {
     setComment(textContent);
-    // setNumOfDivs(numOfDivs + 1);
   }
-
-  // function createCommentDivs() {
-
-  // }
 
   return (
     <div className="whole-post-box">
@@ -100,24 +93,6 @@ function BoxedContentWholePost() {
     </div>
   )
 }
-
-// function AddCommentDiv({textContent}) {
-//   return (
-//     <div>
-//       <p>{textContent}</p>
-//     </div>
-//   )
-// }
-
-
-// function AddPost() {
-//   return (
-//     <div className="add-post-button">
-//       <button id="add-post">+</button>
-//     </div>
-//   )
-// }
-
 
 
 
