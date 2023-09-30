@@ -3,11 +3,11 @@ import './App.css';
 import UserPost from "./components/UserPost";
 
 const postData = [
-  {username: "Person", header: "What is the future?", postText: "AI", likes: 0},
-  {username: "Person2", header: "Dogs are good pets", postText: "Source? me", likes: 3}
+  {key: "Person-What-is-the-future?", username: "Person", header: "What is the future?", postText: "AI", likes: 0},
+  {key: "Person2-Dogs-are-good-pets", username: "Person2", header: "Dogs are good pets", postText: "Source? me", likes: 3}
 ];
 
-const postDisplay = postData.map((posted) => <UserPost username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />);
+const postDisplay = postData.map((posted) => <UserPost key={posted.key} username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />);
 
 
 
@@ -17,7 +17,6 @@ function App() {
   return (
     <div className="App">
       {postDisplay}
-      <UserPost />
       <BoxedContentWholePost />
     </div>
   );
