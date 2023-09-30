@@ -1,7 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 export default function UserPost(props) {
-    const [count, setCount] = useState(0);
+    const [liked, setLike] = useState(false);
+
+    function changeLikes() {
+        setLike(liked);
+        if (liked) {
+        } else {
+        }
+    }
 
     return (
       <div className="post-box">
@@ -15,7 +22,7 @@ export default function UserPost(props) {
               <thead></thead>
               <tbody>
                 <tr>
-                <th><button onClick={() => setCount(1)}>like {props.likes + count}</button></th>
+                <th><button onClick={() => changeLikes()}>like {props.likes}</button></th>
                 <th><button>comment</button></th>
                 </tr>
               </tbody>
