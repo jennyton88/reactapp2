@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-
+import UserPost from "./components/UserPost";
 
 const postData = [
   {username: "Person", header: "What is the future?", postText: "AI", likes: 0},
@@ -9,16 +9,7 @@ const postData = [
 
 const postDisplay = postData.map((posted) => <UserPost username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />);
 
-function UserPost(props) {
-  return (
-    <div>
-      <p>{props.username}</p>
-      <h1>{props.header}</h1>
-      <p>{props.postText}</p>
-      <p>{props.likes}</p>
-    </div>
-  )
-}
+
 
 
 function App() {
@@ -26,36 +17,12 @@ function App() {
   return (
     <div className="App">
       {postDisplay}
+      <UserPost />
       <BoxedContentWholePost />
     </div>
   );
 }
 
-//base area
-function BoxedContent() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="post-box">
-      <p>Username</p>
-      <h2>Header</h2>
-      <div className="post-content">
-        <p>text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content text content </p>
-        </div>
-        <div className="bottom-content">
-          <table>
-            <thead></thead>
-            <tbody>
-              <tr>
-              <th><button onClick={() => setCount(1)}>like {count}</button></th>
-              <th><button>comment</button></th>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-    </div>
-  )
-}
 
 
 function BoxedContentWholePost() {
