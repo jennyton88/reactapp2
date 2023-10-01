@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import UserPost from "./components/UserPost";
 
@@ -13,6 +13,18 @@ const postDisplay = postData.map((posted) => <UserPost key={posted.key} username
 
 
 function App() {
+
+  const [backendData, setBackendData] = useState([{}]);
+
+  useEffect(() => {
+    fetch("/api").then(
+      response => response.json()
+    ).then(
+      data => {
+        setBackendData(data);
+      }
+    )
+  }, []);
 
   return (
     <div className="App">
