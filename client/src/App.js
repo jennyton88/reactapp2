@@ -2,12 +2,12 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import UserPost from "./components/UserPost";
 
-const postData = [
-  {key: "Person-What-is-the-future?", username: "Person", header: "What is the future?", postText: "AI", likes: 0},
-  {key: "Person2-Dogs-are-good-pets", username: "Person2", header: "Dogs are good pets", postText: "Source? me", likes: 3}
-];
+// const postData = [
+//   {key: "Person-What-is-the-future?", username: "Person", header: "What is the future?", postText: "AI", likes: 0},
+//   {key: "Person2-Dogs-are-good-pets", username: "Person2", header: "Dogs are good pets", postText: "Source? me", likes: 3}
+// ];
 
-const postDisplay = postData.map((posted) => <UserPost key={posted.key} username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />);
+// const postDisplay = postData.map((posted) => <UserPost key={posted.key} username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />);
 
 
 
@@ -28,7 +28,17 @@ function App() {
 
   return (
     <div className="App">
-      {postDisplay}
+      {/* {postDisplay} */}
+
+      {(typeof backendData.posts === "undefined") ? (
+        <p>Loading...</p>
+      ): (
+        // backendData.posts.map((post, i) => (
+        //   <p key={i}>{post}</p>
+        // ))
+
+        backendData.posts.map((posted) => <UserPost key={posted.key} username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />)
+      )}
       <BoxedContentWholePost />
     </div>
   );
