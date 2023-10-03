@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-export default function UserPost(props) {
+export default function UserPost(props) { // change to props => {username, header, postText} simplfy below
     const [liked, setLike] = useState(false);
 
     function changeLikes() {
