@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-export default function UserPost(props) { // change to props => {username, header, postText} simplfy below
+export default function UserPost({username, header, postText, likes}) { // change to props => {username, header, postText} simplfy below
     const [liked, setLike] = useState(false);
 
     function changeLikes() {
@@ -12,17 +12,17 @@ export default function UserPost(props) { // change to props => {username, heade
 
     return (
       <div className="post-box">
-        <p>{props.username}</p>
-        <h2>{props.header}</h2>
+        <p>{username}</p>
+        <h2>{header}</h2>
         <div className="post-content">
-            <p>{props.postText}</p>
+            <p>{postText}</p>
         </div>
         <div className="bottom-content">
             <table>
               <thead></thead>
               <tbody>
                 <tr>
-                <th><button onClick={() => changeLikes()}>like {props.likes}</button></th>
+                <th><button onClick={() => changeLikes()}>like {likes}</button></th>
                 <th><button>comment</button></th>
                 </tr>
               </tbody>
