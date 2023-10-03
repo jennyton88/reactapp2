@@ -1,16 +1,10 @@
 const express = require("express");
 const app = express()
 
-// const jsonServer = require("json-server");
-// app.use("/posts", jsonServer.router("db.json"));
-// app.listen(3001);
-
-
-
 app.use(express.json());
 
 app.get("/posts", (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
     res.json({
         "posts": [
             {
