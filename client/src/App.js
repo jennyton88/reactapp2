@@ -12,7 +12,8 @@ import WholeUserPost from "./components/WholeUserPost";
 
 
 function App() {
-  const [backendData, setBackendData] = useState([{}]);
+  //const [backendData, setBackendData] = useState([{}]);
+  const [backendData, setBackendData] = useState(null);
   const [parsedData, setParsedData] = useState([{}]);
 
   const [username, setUsername] = useState("");
@@ -21,10 +22,10 @@ function App() {
   const [userLikes, setUserLikes] = useState(0);
 
   useEffect(() => {
-    fetch("/posts").then(
-      response => response.json(),
-    ).then(
-      data => {
+    fetch("http://localhost:3001/posts")
+    .then(
+      response => response.json())
+      .then(data => {
         console.log("original", data);
         setBackendData(data);
       }
