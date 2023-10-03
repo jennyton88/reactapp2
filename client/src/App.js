@@ -4,14 +4,6 @@ import UserPost from "./components/UserPost";
 import WholeUserPost from "./components/WholeUserPost";
 import TopBar from "./components/TopBar";
 
-// const postData = [
-//   {key: "Person-What-is-the-future?", username: "Person", header: "What is the future?", postText: "AI", likes: 0},
-//   {key: "Person2-Dogs-are-good-pets", username: "Person2", header: "Dogs are good pets", postText: "Source? me", likes: 3}
-// ];
-
-// const postDisplay = postData.map((posted) => <UserPost key={posted.key} username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />);
-
-
 function App() {
   const [backendData, setBackendData] = useState([{}]);
   const [parsedData, setParsedData] = useState([{}]);
