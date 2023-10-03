@@ -1,13 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 export default function UserPost({username, header, postText, likes}) {
-    const [liked, setLike] = useState(false);
+    const [likedPost, setLikedPost] = useState(false);
+    const [totalLikes, setTotalLikes] = useState(likes);
 
     function changeLikes() {
-        setLike(liked);
-        if (liked) {
-        } else {
-        }
+      if (!likedPost) {
+        setLikedPost(true);
+        setTotalLikes(totalLikes + 1);
+      } else {
+        setLikedPost(false);
+        setTotalLikes(totalLikes - 1);
+      }
     }
 
     return (
