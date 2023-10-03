@@ -3,6 +3,7 @@ import './App.css';
 import UserPost from "./components/UserPost";
 import WholeUserPost from "./components/WholeUserPost";
 import TopBar from "./components/TopBar";
+import CreateUserPost from './components/CreateUserPost';
 
 function App() {
   const [backendData, setBackendData] = useState([{}]);
@@ -63,7 +64,7 @@ function App() {
       ): (
         backendData.posts.map((posted) => <UserPost key={posted.key} username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />)
       )}
-      {/* <WholeUserPost /> */}
+      <CreateUserPost />
     </div>
   );
 }
