@@ -9,7 +9,7 @@ body {
 
 .post-box {
   width: 45rem;
-  height: 20rem;
+  /* height: 20rem; */
   padding: 2rem;
   margin: auto;
   border: 0.3rem;
@@ -20,7 +20,7 @@ body {
 }
 
 .post-content {
-  box-sizing: content-box;
+  /* box-sizing: content-box; */
   height: 50%;
   padding-left: 10px;
   padding-right: 10px;
@@ -32,6 +32,7 @@ body {
 }
 
 .bottom-content {
+  box-sizing: content-box;
   border: 0.3 rem;
   border-style: solid;
   border-color: black;
