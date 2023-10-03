@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import UserPost from "./components/UserPost";
 import WholeUserPost from "./components/WholeUserPost";
+import TopBar from "./components/TopBar";
 
 // const postData = [
 //   {key: "Person-What-is-the-future?", username: "Person", header: "What is the future?", postText: "AI", likes: 0},
@@ -12,8 +13,7 @@ import WholeUserPost from "./components/WholeUserPost";
 
 
 function App() {
-  //const [backendData, setBackendData] = useState([{}]);
-  const [backendData, setBackendData] = useState(null);
+  const [backendData, setBackendData] = useState([{}]);
   const [parsedData, setParsedData] = useState([{}]);
 
   const [username, setUsername] = useState("");
@@ -22,10 +22,8 @@ function App() {
   const [userLikes, setUserLikes] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:3001/posts")
-    .then(
-      response => response.json())
-      .then(data => {
+    fetch("/posts").then(
+      response => response.json()).then(data => {
         console.log("original", data);
         setBackendData(data);
       }
@@ -59,6 +57,7 @@ function App() {
 
   return (
     <div className="App">
+      <TopBar />
       <textarea className="username" value={username} onChange={e => setUsername(e.target.value)}></textarea>
       <br></br>
       <textarea className="header" value={header} onChange={e => setHeader(e.target.value)}></textarea>
@@ -70,7 +69,6 @@ function App() {
       {(typeof backendData.posts === "undefined") ? (
         <p>Loading...</p>
       ): (
-
         backendData.posts.map((posted) => <UserPost key={posted.key} username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />)
       )}
       {/* <WholeUserPost /> */}
