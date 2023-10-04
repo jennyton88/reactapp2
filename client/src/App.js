@@ -47,27 +47,34 @@ function App() {
   //   )
   // }
 
+  // return (
+  //   <div className="App">
+  //     <TopBar />
+
+  //     <Feed />
+  //     {/* <textarea className="username" value={username} onChange={e => setUsername(e.target.value)}></textarea>
+  //     <br></br>
+  //     <textarea className="header" value={header} onChange={e => setHeader(e.target.value)}></textarea>
+  //     <br></br>
+  //     <textarea className="userText" value={userText} onChange={e => setUserText(e.target.value)}></textarea>
+  //     <br></br>
+  //     <button onClick={() => updateData()}>Add posts</button> */}
+
+  //     {/* {(typeof backendData.posts === "undefined") ? (
+  //       <p>Loading...</p>
+  //     ): (
+  //       backendData.posts.map((posted) => <UserPost key={posted.key} username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />)
+  //     )} */}
+  //     <CreateUserPost />
+  //   </div>
+  // );
+
+
   return (
-    <div className="App">
-      <TopBar />
-
-      <Feed />
-      {/* <textarea className="username" value={username} onChange={e => setUsername(e.target.value)}></textarea>
-      <br></br>
-      <textarea className="header" value={header} onChange={e => setHeader(e.target.value)}></textarea>
-      <br></br>
-      <textarea className="userText" value={userText} onChange={e => setUserText(e.target.value)}></textarea>
-      <br></br>
-      <button onClick={() => updateData()}>Add posts</button> */}
-
-      {/* {(typeof backendData.posts === "undefined") ? (
-        <p>Loading...</p>
-      ): (
-        backendData.posts.map((posted) => <UserPost key={posted.key} username={posted.username} header={posted.header} postText={posted.postText} likes={posted.likes} />)
-      )} */}
-      <CreateUserPost />
+    <div className='App'>
+      
     </div>
-  );
+  )
 }
 
 export default App;
