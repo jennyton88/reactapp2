@@ -86,3 +86,10 @@ body {
   width: 85%;
   resize: none;
 }
+
+.links-around-feed {
+  padding: 1rem;
+  border: 0.3rem;
+  border-style: solid;
+  border-color: black;
+}
