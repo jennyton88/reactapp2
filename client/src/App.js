@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
 import UserPost from "./components/UserPost";
 import WholeUserPost from "./components/WholeUserPost";
 import TopBar from "./components/TopBar";
 import CreateUserPost from './components/CreateUserPost';
 import FrontPage from './components/FrontPage';
+
 
 
 import Feed from './components/Feed';
@@ -74,10 +78,15 @@ function App() {
 
 
   return (
-    <div className='App'>
-      <TopBar />
-      <FrontPage />
-    </div>
+    <Router>
+      <div className='App'>
+        <TopBar />
+          <Routes>
+            <Route path='/' element={<FrontPage />} />
+            <Route path='/create-post' element={<CreateUserPost />} />
+          </Routes>
+      </div>
+    </Router>
   )
 }
 
