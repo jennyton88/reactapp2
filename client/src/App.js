@@ -4,6 +4,9 @@ import UserPost from "./components/UserPost";
 import WholeUserPost from "./components/WholeUserPost";
 import TopBar from "./components/TopBar";
 import CreateUserPost from './components/CreateUserPost';
+import FrontPage from './components/FrontPage';
+
+
 import Feed from './components/Feed';
 
 function App() {
@@ -72,7 +75,8 @@ function App() {
 
   return (
     <div className='App'>
-      
+      <TopBar />
+      <FrontPage />
     </div>
   )
 }
