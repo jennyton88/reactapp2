@@ -1,21 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import UserPost from "./UserPost";
 
-export default function Feed() {
-  const [backendData, setBackendData] = useState([{}]);
-
-  useEffect(() => {
-    fetch("/posts").then(
-      response => response.json())
-      .then(data => {
-        console.log("original", data);
-        setBackendData(data);
-      }
-    )
-  }, []);
+export default function Feed({backendData}) {
 
   return (
     <div>
+      
       {(typeof backendData.posts === "undefined") ? (
         <p>Loading...</p>
       ): (
