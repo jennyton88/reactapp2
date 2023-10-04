@@ -8,6 +8,9 @@ export default function CreateUserPost() {
     const [userLikes, setUserLikes] = useState(0);
     
     function handlePost() {
+        console.log(
+            "handling post"
+        );
         const createdPost = {
             "key": username + header,
             "username": username,
@@ -22,13 +25,12 @@ export default function CreateUserPost() {
           body: JSON.stringify(createdPost)
         }).then(
           response => response.json()
+        ).then(
+          data => {
+            //console.log("new", data);
+            //setBackendData(data);
+          }
         )
-        // ).then(
-        // //   data => {
-        // //     console.log("new", data);
-        // //     setBackendData(data);
-        // //   }
-        // )
     }
     
     return (
