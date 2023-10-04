@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
-export default function UserPost({username, header, postText, likes}) {
+export default function UserPost({postId, username, header, postText, likes}) {
     const [likedPost, setLikedPost] = useState(false);
     const [totalLikes, setTotalLikes] = useState(likes);
 
@@ -17,7 +18,7 @@ export default function UserPost({username, header, postText, likes}) {
     return (
       <div className="post-box">
         <p>{username}</p>
-        <h2>{header}</h2>
+        <Link to={`/posts/${postId}`}><h2>{header}</h2></Link>
         <div className="post-content">
             <p>{postText}</p>
         </div>
