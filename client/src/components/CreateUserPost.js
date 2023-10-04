@@ -8,9 +8,8 @@ export default function CreateUserPost() {
     const [userLikes, setUserLikes] = useState(0);
     
     function handlePost() {
-        console.log(
-            "handling post"
-        );
+        console.log("handling post");
+        
         const createdPost = {
             "key": username + header,
             "username": username,
