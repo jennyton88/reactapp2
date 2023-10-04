@@ -6,11 +6,11 @@ export default function Feed({backendData}) {
     <div>      
       {(typeof backendData.posts === "undefined") ? (<p>Loading...</p>)
       :(
-        backendData.posts.map((post) => <UserPost key={post.key} 
+        backendData.posts.map((post) => <UserPost key={post.key}
                                               username={post.username} 
                                                 header={post.header} 
                                                   postText={post.postText} 
-                                                    likes={post.likes} />)
+                                                    likes={post.likes} postId={post.key}/>)
       )}
     </div>
   )
