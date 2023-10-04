@@ -5,10 +5,25 @@ import Feed from './Feed';
 export default function FrontPage() {
     const [backendData, setBackendData] = useState({});
 
+    const [errorMessage, setErrorMessage] = useState(null);
+
     useEffect(() => {
       fetch("/posts")
-        .then(response => response.json())
-            .then(data => {setBackendData(data)});
+        .then(response => {
+            if (!response.ok) {
+                throw Error('could not fetch data from response');
+            } else {
+                return response.json();
+            }
+        })
+        .then(data => {
+            setBackendData(data);
+        })
+        .catch(error => {
+            setErrorMessage(error.message);
+            console.log(error.message);
+        })
+    
     }, []);
 
     return (
