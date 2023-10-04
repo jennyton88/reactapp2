@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import useFetchData from './useFetchData';
 
 export default function WholeUserPost() {
     const {id} = useParams();
+
+    const {backendData, errorMessage} = useFetchData("/posts/" + id);
 
     const [count, setCount] = useState(0);
     const [saveComment, setComment] = useState("");
@@ -14,17 +17,17 @@ export default function WholeUserPost() {
   
     return (
       <div className="whole-post-box">
-        <p>Username</p>
-        <h2>Whole Post Header { id }</h2>
+        <p>{backendData.username}</p>
+        <h2>{backendData.header}</h2>
         <div className="whole-post-content">
-          <p>text content </p>
+          <p>{backendData.postText} </p>
         </div>
         <div className="whole-post-bottom-content">
           <table>
             <thead></thead>
             <tbody>
               <tr>
-                <th><button onClick={() => setCount(1)}>like {count}</button></th>
+                <th><button onClick={() => setCount(1)}>like {backendData.likes}</button></th>
                 <th><button>comment</button></th>
               </tr>
             </tbody>
