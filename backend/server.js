@@ -3,28 +3,6 @@ const app = express()
 
 app.use(express.json());
 
-app.get("/posts", (req, res) => {
-    //console.log(req.body);
-    res.json({
-        "posts": [
-            {
-                "key": "Person-What-is-the-future?",
-                "username": "Person",
-                "header": "What is the future?",
-                "postText": "AI", 
-                "likes": 0
-            },
-            {
-                "key": "Person2-Dogs-are-good-pets", 
-                "username": "Person2", 
-                "header": "Dogs are good pets", 
-                "postText": "Source? me", 
-                "likes": 3
-            }
-        ]
-    });
-});
-
 let test = {
     "posts": [
         {
@@ -43,6 +21,30 @@ let test = {
         }
     ]
 };
+
+app.get("/posts", (req, res) => {
+
+    res.json(test);
+    //console.log(req.body);
+    // res.json({
+    //     "posts": [
+    //         {
+    //             "key": "Person-What-is-the-future?",
+    //             "username": "Person",
+    //             "header": "What is the future?",
+    //             "postText": "AI", 
+    //             "likes": 0
+    //         },
+    //         {
+    //             "key": "Person2-Dogs-are-good-pets", 
+    //             "username": "Person2", 
+    //             "header": "Dogs are good pets", 
+    //             "postText": "Source? me", 
+    //             "likes": 3
+    //         }
+    //     ]
+    // });
+});
 
 app.post("/posts", (req, res) => {
     
