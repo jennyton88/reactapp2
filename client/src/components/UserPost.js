@@ -5,7 +5,7 @@ export default function UserPost({username, header, postText, likes}) {
     const [totalLikes, setTotalLikes] = useState(likes);
 
     function changeLikes() {
-      if (!likedPost) {
+      if (!likedPost) { // console.log shows opposite of totalLikes compared to rendered
         setLikedPost(true);
         setTotalLikes(totalLikes + 1);
       } else {
