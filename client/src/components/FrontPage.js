@@ -13,7 +13,7 @@ export default function FrontPage() {
 
     return (
         <div className='the-front-page'>
-            {(backendData === "undefined") ? (<p>Loading...</p>) : (<Feed backendData={backendData} />)}
+            <Feed backendData={backendData} />
         </div>
     )
 }
