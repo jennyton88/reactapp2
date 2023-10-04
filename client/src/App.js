@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import UserPost from "./components/UserPost";
 import WholeUserPost from "./components/WholeUserPost";
@@ -78,15 +78,16 @@ function App() {
 
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className='App'>
         <TopBar />
           <Routes>
             <Route path='/' element={<FrontPage />} />
             <Route path='/create-post' element={<CreateUserPost />} />
+            <Route path='/posts/:id' element={<WholeUserPost />} />
           </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   )
 }
 
