@@ -26,7 +26,7 @@ export default function UserPost({username, header, postText, likes}) {
               <thead></thead>
               <tbody>
                 <tr>
-                <th><button onClick={() => changeLikes()}>like {likes}</button></th>
+                <th><button onClick={() => changeLikes()}>like {totalLikes}</button></th>
                 <th><button>comment</button></th>
                 </tr>
               </tbody>
