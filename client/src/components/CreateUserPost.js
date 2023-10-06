@@ -26,7 +26,7 @@ export default function CreateUserPost() {
           response => response.json()
         ).then(
           data => {
-            //console.log("new", data);
+            console.log("new", data);
             //setBackendData(data);
           }
         )
